@@ -1,0 +1,7 @@
+Cada carpeta es un proyecto Flutter incompleto (sin android/ ni web/).
+Para usarla:
+1. En la carpeta padre ejecuta:  flutter create NOMBRE_DEL_PROYECTO
+2. Copia pubspec.yaml y lib/main.dart de esta carpeta dentro del proyecto creado (reemplaza los originales).
+3. Ejecuta: flutter pub get   y luego   flutter run -d chrome
+Reto 1 y Reto 3: reemplaza TU_API_KEY por tu clave (TMDB y OpenWeatherMap).
+Reto 2 no necesita clave.
