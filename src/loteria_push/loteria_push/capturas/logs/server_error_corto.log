@@ -1,0 +1,45 @@
+✔ unirse: devuelve tabla de 16, clave propia y las cartas ya cantadas (126.4371ms)
+✔ unirse sin destino (sin permiso de notificaciones) está permitido (1.8343ms)
+✔ nombres inválidos, repetidos y destinos inválidos se rechazan (8.0985ms)
+✔ nombres con acentos y eñes son válidos (1.3423ms)
+✔ la sala se llena en el máximo de jugadores (9.0928ms)
+✔ cantar entrega las cartas en el orden del mazo secreto (2.1659ms)
+✔ freno: cantar dos veces seguidas es "muy rápido" (1.8002ms)
+✔ estado: solo muestra lo ya cantado y permite pedir "desde n" (3.1808ms)
+✔ estado devuelve copias: modificar la respuesta no altera la sala (2.376ms)
+✔ reclamar sin patrón completo: no gana, y puede seguir jugando (4.0406ms)
+✔ reclamar con clave equivocada es "no autorizado" (igual si el jugador no existe) (2.0692ms)
+✔ un jugador gana cuando completa un patrón; el servidor lo valida (138.0018ms)
+✔ después de ganar: nadie más gana y no se puede seguir cantando (7.2195ms)
+✔ "¡casi!": se avisa UNA sola vez por jugador y solo a quien tiene destino (4.8337ms)
+✔ el aviso de "casi" nombra la carta que falta (2.6017ms)
+✔ actualizar destino exige la clave del jugador (1.6626ms)
+✔ solo el cantor (con su clave) puede verificar (1.2831ms)
+✔ Salas: crear, obtener sin importar mayúsculas y sala inexistente (2.2986ms)
+✔ flujo completo: crear, unirse, cantar y ver el push al tema (2031.3203ms)
+✔ cantar exige la clave del cantor (666.8109ms)
+✔ freno: dos cantos seguidos -> 429 y solo un push (228.1586ms)
+✔ GET estado devuelve las cartas desde n (para ponerse al día) (500.1331ms)
+✔ si FCM falla, el canto igual cuenta (el estado es la verdad) y se registra el fallo (143.5748ms)
+✔ aviso de "casi" va a UN token, no al tema; y el token muerto se elimina (988.2751ms)
+✔ un error "invalid-argument" NO borra al jugador (puede ser nuestro mensaje) (736.4715ms)
+✔ un destino tipo fid se envía con el campo fid (1272.4121ms)
+✔ PUT destino: solo con la clave del jugador (nadie secuestra tokens ajenos) (254.3328ms)
+✔ lotería: el servidor valida y avisa a todos; falsa alarma no avisa a nadie (994.4802ms)
+✖ entradas malas: JSON roto, cuerpo enorme, sala inexistente y ruta desconocida (260.1011ms)
+✔ errores internos no filtran detalles al cliente (27.9591ms)
+ℹ tests 61
+ℹ pass 60
+ℹ fail 1
+ℹ duration_ms 28294.5541
+
+✖ failing tests:
+
+test at test\servidor.test.js:203:1
+✖ entradas malas: JSON roto, cuerpo enorme, sala inexistente y ruta desconocida (260.1011ms)
+  [TypeError [Error]: fetch failed] {
+    [cause]: Error [SocketError]: other side closed
+      code: 'UND_ERR_SOCKET',
+      socket: { localAddress: '127.0.0.1', localPort: 65298, remoteAddress: '127.0.0.1', remotePort: 65296, remoteFamily: 'IPv4', timeout: undefined, bytesWritten: 5508, bytesRead: 264 }
+    }
+  }
